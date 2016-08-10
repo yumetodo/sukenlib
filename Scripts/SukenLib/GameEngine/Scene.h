@@ -19,7 +19,7 @@ public:
 	}
 	std::string title;///<  @brief à–¾
 	int x1,x2,y1,y2;///<  @brief à–¾
-	int backColor,stringColor;///<  @brief à–¾
+	unsigned int backColor,stringColor;///<  @brief à–¾
 	int graphHandle;///<  @brief à–¾
 	bool IsUseGraph;///<  @brief à–¾
 	int graphHandle_on;///<  @brief à–¾
@@ -38,7 +38,7 @@ public:
 	}
 	std::string title;///<  @brief à–¾
 	int *x1,*x2,*y1,*y2;///<  @brief à–¾
-	int backColor,stringColor;///<  @brief à–¾
+	unsigned int backColor,stringColor;///<  @brief à–¾
 	int graphHandle;///<  @brief à–¾
 	bool IsUseGraph;///<  @brief à–¾
 	int graphHandle_on;///<  @brief à–¾
@@ -94,22 +94,22 @@ public:
 *	@brief à–¾
 *	@param value ˆø”
 */
-	void SetButton( int x1 , int y1 , int x2 , int y2 , int backColor , std::string title , int stringColor , void (*pFunc)() );
+	void SetButton( int x1 , int y1 , int x2 , int y2 , unsigned int backColor , std::string title , unsigned int stringColor , void (*pFunc)() );
 /**
 *	@brief à–¾
 *	@param value ˆø”
 */
-	void SetButton( int x1 , int y1 , int x2 , int y2 , int backColor , std::string title , int stringColor , void (*pFunc)(int) , int *pInt );
+	void SetButton( int x1 , int y1 , int x2 , int y2 , unsigned int backColor , std::string title , unsigned int stringColor , void (*pFunc)(int) , int *pInt );
 /**
 *	@brief à–¾
 *	@param value ˆø”
 */
-	void SetButton( int x1 , int y1 , int x2 , int y2 , int backColor , std::string title , int stringColor , void (*pFunc)(int) , int Int );
+	void SetButton( int x1 , int y1 , int x2 , int y2 , unsigned int backColor , std::string title , unsigned int stringColor , void (*pFunc)(int) , int Int );
 /**
 *	@brief à–¾
 *	@param value ˆø”
 */
-	void SetButton( int x1 , int y1 , int x2 , int y2 , int backColor , std::string title , int stringColor , CScene *_scene );
+	void SetButton( int x1 , int y1 , int x2 , int y2 , unsigned int backColor , std::string title , unsigned int stringColor , CScene *_scene );
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -186,22 +186,22 @@ public:
 *	@brief à–¾
 *	@param value ˆø”
 */
-	void SetButton( int *x1 , int *y1 , int *x2 , int *y2 , int backColor , std::string title , int stringColor , void (*pFunc)() );
+	void SetButton( int *x1 , int *y1 , int *x2 , int *y2 , unsigned int backColor , std::string title , unsigned int stringColor , void (*pFunc)() );
 /**
 *	@brief à–¾
 *	@param value ˆø”
 */
-	void SetButton( int *x1 , int *y1 , int *x2 , int *y2 , int backColor , std::string title , int stringColor , void (*pFunc)(int) ,int *pInt );
+	void SetButton( int *x1 , int *y1 , int *x2 , int *y2 , unsigned int backColor , std::string title , unsigned int stringColor , void (*pFunc)(int) ,int *pInt );
 /**
 *	@brief à–¾
 *	@param value ˆø”
 */
-	void SetButton( int *x1 , int *y1 , int *x2 , int *y2 , int backColor , std::string title , int stringColor , void (*pFunc)(int) ,int Int );
+	void SetButton( int *x1 , int *y1 , int *x2 , int *y2 , unsigned int backColor , std::string title , unsigned int stringColor , void (*pFunc)(int) ,int Int );
 /**
 *	@brief à–¾
 *	@param value ˆø”
 */
-	void SetButton( int *x1 , int *y1 , int *x2 , int *y2 , int backColor , std::string title , int stringColor , CScene *_scene );
+	void SetButton( int *x1 , int *y1 , int *x2 , int *y2 , unsigned int backColor , std::string title , unsigned int stringColor , CScene *_scene );
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

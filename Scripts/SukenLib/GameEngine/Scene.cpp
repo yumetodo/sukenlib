@@ -121,7 +121,7 @@ void suken::CScene::RemoveChild()
 	}
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-void suken::CScene::SetButton( int x1 , int y1 , int x2 , int y2 , int backColor , std::string title , int stringColor , void (*pFunc)() )
+void suken::CScene::SetButton( int x1 , int y1 , int x2 , int y2 , unsigned int backColor , std::string title , unsigned int stringColor , void (*pFunc)() )
 {
 	CButton temp;
 	temp.IsUseGraph = false;
@@ -137,7 +137,7 @@ void suken::CScene::SetButton( int x1 , int y1 , int x2 , int y2 , int backColor
 		
 	this->input.AddEventListener( Event.LMouse.Click( x1 , y1 , x2 , y2 ) , pFunc );
 }
-void suken::CScene::SetButton( int x1 , int y1 , int x2 , int y2 , int backColor , std::string title , int stringColor , void (*pFunc)(int) , int *pInt )
+void suken::CScene::SetButton( int x1 , int y1 , int x2 , int y2 , unsigned int backColor , std::string title , unsigned int stringColor , void (*pFunc)(int) , int *pInt )
 {
 	CButton temp;
 	temp.IsUseGraph = false;
@@ -153,7 +153,7 @@ void suken::CScene::SetButton( int x1 , int y1 , int x2 , int y2 , int backColor
 		
 	this->input.AddEventListener( Event.LMouse.Click( x1 , y1 , x2 , y2 ) , pFunc , pInt );
 }
-void suken::CScene::SetButton( int x1 , int y1 , int x2 , int y2 , int backColor , std::string title , int stringColor , void (*pFunc)(int) , int Int )
+void suken::CScene::SetButton( int x1 , int y1 , int x2 , int y2 , unsigned int backColor , std::string title , unsigned int stringColor , void (*pFunc)(int) , int Int )
 {
 	CButton temp;
 	temp.IsUseGraph = false;
@@ -169,7 +169,7 @@ void suken::CScene::SetButton( int x1 , int y1 , int x2 , int y2 , int backColor
 		
 	this->input.AddEventListener( Event.LMouse.Click( x1 , y1 , x2 , y2 ) , pFunc , Int );
 }
-void suken::CScene::SetButton(int x1, int y1, int x2, int y2, int backColor, std::string title, int stringColor, CScene *_scene)
+void suken::CScene::SetButton(int x1, int y1, int x2, int y2, unsigned int backColor, std::string title, unsigned int stringColor, CScene *_scene)
 {
 	CButton temp;
 	temp.IsUseGraph = false;
@@ -413,7 +413,7 @@ void suken::CScene::SetButton(int x1, int y1, int x2, int y2, std::string Off_gr
 	buttonChild.push_back(temp);
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-void suken::CScene::SetButton( int *x1 , int *y1 , int *x2 , int *y2 , int backColor , std::string title , int stringColor , void (*pFunc)() )
+void suken::CScene::SetButton( int *x1 , int *y1 , int *x2 , int *y2 , unsigned int backColor , std::string title , unsigned int stringColor , void (*pFunc)() )
 {
 	CpButton temp;
 	temp.IsUseGraph = false;
@@ -429,7 +429,7 @@ void suken::CScene::SetButton( int *x1 , int *y1 , int *x2 , int *y2 , int backC
 
 	this->input.AddEventListener( Event.LMouse.Click( x1 , y1 , x2 , y2 ) , pFunc );
 }
-void suken::CScene::SetButton( int *x1 , int *y1 , int *x2 , int *y2 , int backColor , std::string title , int stringColor , void (*pFunc)(int) ,int *pInt )
+void suken::CScene::SetButton( int *x1 , int *y1 , int *x2 , int *y2 , unsigned int backColor , std::string title , unsigned int stringColor , void (*pFunc)(int) ,int *pInt )
 {
 	CpButton temp;
 	temp.IsUseGraph = false;
@@ -445,7 +445,7 @@ void suken::CScene::SetButton( int *x1 , int *y1 , int *x2 , int *y2 , int backC
 
 	this->input.AddEventListener( Event.LMouse.Click( x1 , y1 , x2 , y2 ) , pFunc ,pInt );
 }
-void suken::CScene::SetButton( int *x1 , int *y1 , int *x2 , int *y2 , int backColor , std::string title , int stringColor , void (*pFunc)(int) ,int Int )
+void suken::CScene::SetButton( int *x1 , int *y1 , int *x2 , int *y2 , unsigned int backColor , std::string title , unsigned int stringColor , void (*pFunc)(int) ,int Int )
 {
 	CpButton temp;
 	temp.IsUseGraph = false;
@@ -461,7 +461,7 @@ void suken::CScene::SetButton( int *x1 , int *y1 , int *x2 , int *y2 , int backC
 
 	this->input.AddEventListener( Event.LMouse.Click( x1 , y1 , x2 , y2 ) , pFunc ,Int );
 }
-void suken::CScene::SetButton(int *x1, int *y1, int *x2, int *y2, int backColor, std::string title, int stringColor, CScene *_scene)
+void suken::CScene::SetButton(int *x1, int *y1, int *x2, int *y2, unsigned int backColor, std::string title, unsigned int stringColor, CScene *_scene)
 {
 	CpButton temp;
 	temp.IsUseGraph = false;
