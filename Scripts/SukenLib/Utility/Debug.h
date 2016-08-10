@@ -152,7 +152,7 @@ inline void WarningDx(int line, const char* func, const char* filename, const st
     #ifndef WARNINGDX_DISABLE 
         char tmpchar[256];
         va_list args;   va_start(args, format);
-        sprintf_s(tmpchar, "Warning->%s\n->%s", format, func);
+        sprintf_s(tmpchar, "Warning->%s\n->%s", format.c_str(), func);
         myprintfDx(tmpchar, args, filename, line);
         va_end(args);
     #endif
