@@ -55,7 +55,7 @@ public:
 *	@brief à–¾
 *	@param value ˆø”
 */
-	void Draw(int color);
+	void Draw(unsigned int color);
 	/**
 *	@brief à–¾
 */

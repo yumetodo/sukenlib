@@ -79,6 +79,6 @@ private:
 	char *mem;
 };
 
-void SetKeyInputStringColor(int NmlStr,int NmlCur,int _back,int _frame,int _font,int _fontColor);
+void SetKeyInputStringColor(unsigned int NmlStr, unsigned int NmlCur, unsigned int back_, unsigned int frame_, int font_, unsigned int fontColor_);
 
 }

@@ -42,7 +42,7 @@ suken::Vector2D suken::CRect::GetRightBottom()
 {				
 	return ( center.position + VScale(VGet((float)cos(direction+M_PI-rad),(float)sin(direction+M_PI-rad)),radius) );	
 }
-void suken::CRect::Draw(int color)
+void suken::CRect::Draw(unsigned int color)
 {
 	DrawLine(GetLeftTop(),GetRightTop(),RED);
 	DrawLine(GetRightTop(),GetRightBottom(),BLUE);

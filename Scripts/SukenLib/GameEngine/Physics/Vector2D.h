@@ -260,7 +260,7 @@ __inline float GetSquareDistance(Vector2D v1 ,Vector2D v2)
 *	@param value 引数
 * @return 戻り値
 */
-__inline int DrawLine(Vector2D &v1 , Vector2D &v2 ,int color)
+__inline int DrawLine(Vector2D &v1 , Vector2D &v2 , unsigned int color)
 {
 	return DxLib::DrawLine((int)v1.x,(int)v1.y,(int)v2.x,(int)v2.y,color);
 }
@@ -269,7 +269,7 @@ __inline int DrawLine(Vector2D &v1 , Vector2D &v2 ,int color)
 *	@param value 引数
 * @return 戻り値
 */
-__inline int DrawCircle(Vector2D &v,int r,int color,bool fillFlag)
+__inline int DrawCircle(Vector2D &v,int r, unsigned int color,bool fillFlag)
 {
 	return DxLib::DrawCircle((int)v.x,(int)v.y,r,color,fillFlag);
 }
@@ -278,7 +278,7 @@ __inline int DrawCircle(Vector2D &v,int r,int color,bool fillFlag)
 *	@param value 引数
 * @return 戻り値
 */
-__inline int DrawBox(suken::Vector2D &v1,suken::Vector2D &v2,int color,bool fillFlag)
+__inline int DrawBox(suken::Vector2D &v1,suken::Vector2D &v2, unsigned int color,bool fillFlag)
 {
 	return DxLib::DrawBox((int)v1.x,(int)v1.y,(int)v2.x,(int)v2.y,color,fillFlag);
 }
@@ -287,7 +287,7 @@ __inline int DrawBox(suken::Vector2D &v1,suken::Vector2D &v2,int color,bool fill
 *	@param value 引数
 * @return 戻り値
 */
-_inline int DrawOval(suken::Vector2D &v,suken::Vector2D &r,int color,bool fillFlag)
+_inline int DrawOval(suken::Vector2D &v,suken::Vector2D &r, unsigned int color,bool fillFlag)
 {
 	return DxLib::DrawOval((int)v.x,(int)v.y,(int)r.x,(int)r.y,color,fillFlag);
 }
@@ -296,7 +296,7 @@ _inline int DrawOval(suken::Vector2D &v,suken::Vector2D &r,int color,bool fillFl
 *	@param value 引数
 * @return 戻り値
 */
-_inline int DrawOval(suken::Vector2D &v,int rx,int ry,int color,bool fillFlag)
+_inline int DrawOval(suken::Vector2D &v,int rx,int ry, unsigned int color,bool fillFlag)
 {
 	return DxLib::DrawOval((int)v.x,(int)v.y,rx,ry,color,fillFlag);
 }
@@ -305,7 +305,7 @@ _inline int DrawOval(suken::Vector2D &v,int rx,int ry,int color,bool fillFlag)
 *	@param value 引数
 * @return 戻り値
 */
-_inline int DrawTriangle(suken::Vector2D &v1,suken::Vector2D &v2,suken::Vector2D &v3,int color,bool fillFlag)
+_inline int DrawTriangle(suken::Vector2D &v1,suken::Vector2D &v2,suken::Vector2D &v3, unsigned int color,bool fillFlag)
 {
 	return DxLib::DrawTriangle((int)v1.x,(int)v1.y,(int)v2.x,(int)v2.y,(int)v3.x,(int)v3.y,color,fillFlag);
 }
@@ -314,7 +314,7 @@ _inline int DrawTriangle(suken::Vector2D &v1,suken::Vector2D &v2,suken::Vector2D
 *	@param value 引数
 * @return 戻り値
 */
-_inline int DrawPixel(suken::Vector2D &v,int color)
+_inline int DrawPixel(suken::Vector2D &v, unsigned int color)
 {
 	return DxLib::DrawPixel((int)v.x,(int)v.y,color);
 }
@@ -331,7 +331,7 @@ typedef std::vector<suken::Vector2D> BEZIER ;
 *	@brief 説明
 *	@param value 引数
 */
-void DrawBezier( BEZIER &data ,  int color );
+void DrawBezier( BEZIER &data , unsigned int color );
 //ベジェ曲線頂点データの作成
 ////ベジェ曲線の計算をマイフレームするのは無駄なので計算済みのデータを作成する
 //引数

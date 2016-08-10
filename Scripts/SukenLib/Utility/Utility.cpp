@@ -118,7 +118,7 @@ int suken::RainBow(){
 	return GetColor(rgb.r*255,rgb.g*255,rgb.b*255);
 }
 
-int suken::GetColorHSV(int h,int s,int v){
+unsigned int suken::GetColorHSV(int h,int s,int v){
 	hsv.h = h / 255;
 	hsv.s = s / 255;
 	hsv.v = v / 255;
@@ -217,7 +217,7 @@ std::string suken::GetNowSystemTimeString()
     return tmp;
 }
 //DrawCenterString Notフォーマット版
-int suken::DrawCenterString(int cx, int y, int color, const TCHAR* format, ...)
+int suken::DrawCenterString(int cx, int y, unsigned int color, const TCHAR* format, ...)
 {
     va_list args;
     char string[1024];
@@ -235,7 +235,7 @@ int suken::DrawCenterString(int cx, int y, int color, const TCHAR* format, ...)
  
     return for_return;  
 }
-int suken::DrawCenterString(int cx, int y, int color, bool centerY, const TCHAR* format, ...)
+int suken::DrawCenterString(int cx, int y, unsigned int color, bool centerY, const TCHAR* format, ...)
 { //フォーマット版
     va_list args;
     char string[1024];

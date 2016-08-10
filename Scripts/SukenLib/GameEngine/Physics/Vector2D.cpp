@@ -162,7 +162,7 @@ BEZIER GetBezier(std::vector<suken::Vector2D> &In , unsigned int vertexNum )
 //引数
 // data  : GetBezier関数で作成したベジェ曲線データ
 // color : 描画色を指定
-void DrawBezier( BEZIER &data ,  int color )
+void DrawBezier( BEZIER &data , unsigned int color )
 {
 	for(unsigned int i = 0; i < data.size() - 1; i++){
 		DrawLine( (int)data[ i ].x ,(int)data[ i ].y , (int)data[ i+1 ].x , (int)data[ i+1 ].y , color );

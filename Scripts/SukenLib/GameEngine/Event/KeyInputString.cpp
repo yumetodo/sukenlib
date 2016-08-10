@@ -1,21 +1,21 @@
 #include "KeyInputString.h"
 #include "Event.h"
 
-const int RED = GetColor( 255 , 0 , 0 );///<  @brief à–¾
-const int GREEN = GetColor( 0 , 255 , 0 );///<  @brief à–¾
-const int BLUE = GetColor( 0 , 0 , 255 );///<  @brief à–¾
-const int BLACK = GetColor( 0 , 0 , 0 );///<  @brief à–¾
-const int WHITE = GetColor( 255 , 255 , 255 );///<  @brief à–¾
-const int GRAY = GetColor( 128 , 128 , 128 );///<  @brief à–¾
-const int LIGHTBLUE = GetColor( 128 , 128 , 255 );///<  @brief à–¾
-const int LIGHTGREEN = GetColor( 128 , 255 , 128 );///<  @brief à–¾
-const int M_PINK = GetColor( 255 , 128 , 128 );///<  @brief à–¾
-const int YELLOW = GetColor( 255 , 255 , 0);///<  @brief à–¾
+const unsigned int RED = GetColor( 255 , 0 , 0 );///<  @brief à–¾
+const unsigned int GREEN = GetColor( 0 , 255 , 0 );///<  @brief à–¾
+const unsigned int BLUE = GetColor( 0 , 0 , 255 );///<  @brief à–¾
+const unsigned int BLACK = GetColor( 0 , 0 , 0 );///<  @brief à–¾
+const unsigned int WHITE = GetColor( 255 , 255 , 255 );///<  @brief à–¾
+const unsigned int GRAY = GetColor( 128 , 128 , 128 );///<  @brief à–¾
+const unsigned int LIGHTBLUE = GetColor( 128 , 128 , 255 );///<  @brief à–¾
+const unsigned int LIGHTGREEN = GetColor( 128 , 255 , 128 );///<  @brief à–¾
+const unsigned int M_PINK = GetColor( 255 , 128 , 128 );///<  @brief à–¾
+const unsigned int YELLOW = GetColor( 255 , 255 , 0);///<  @brief à–¾
 
-int back = GetColor(255,255,255);
-int frame = GetColor(0,0,0);
+unsigned int back = GetColor(255,255,255);
+unsigned int frame = GetColor(0,0,0);
 int font = NULL;
-int fontColor = GetColor(255,255,255);
+unsigned int fontColor = GetColor(255,255,255);
 
 void suken::CKeyInputString::Draw(int x, int y, bool activeOnly, int x2, int y2) {
 		if (CheckKeyInput(data) == 1) {
@@ -57,12 +57,12 @@ void suken::CKeyInputString::Draw(int x, int y, bool activeOnly, int x2, int y2)
 		}
 	}
 
-void suken::SetKeyInputStringColor(int NmlStr,int NmlCur,int _back,int _frame,int _font,int _fontColor){
+void suken::SetKeyInputStringColor(unsigned int NmlStr, unsigned int NmlCur, unsigned int back_, unsigned int frame_,int font_,unsigned int fontColor_){
 	DxLib::SetKeyInputStringColor(NmlStr,NmlCur,GetColor(50,50,50),RED,WHITE,
 		GetColor(100,100,100),WHITE,BLACK,BLACK,BLACK,GRAY,WHITE,
 		GetColor(200,200,200),BLACK,BLACK,GetColor(254,254,254),BLACK);
-	back = _back;
-	frame = _frame;
-	font = _font;
-	fontColor = _fontColor;
+	back = back_;
+	frame = frame_;
+	font = font_;
+	fontColor = fontColor_;
 }
