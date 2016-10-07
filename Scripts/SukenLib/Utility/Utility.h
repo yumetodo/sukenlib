@@ -3,92 +3,127 @@
 #include "DxLib.h"
 #include <string>
 
+namespace megademo  // http://www.demoscene.jp/?p=1460
+{
+	struct RGB
+	{
+	//	RGB(){}
+
+	//	RGB( float r_, float g_, float b_ ) : r(r_),g(g_),b(b_){}
+
+		float r,g,b;	// [0.0f, 1.0f]
+	};
+
+}
+
+extern megademo::RGB rgb;
+
 namespace suken{
 
-const unsigned int RED = GetColor( 255 , 0 , 0 );///<  @brief à–¾
-const unsigned int GREEN = GetColor( 0 , 255 , 0 );///<  @brief à–¾
-const unsigned int BLUE = GetColor( 0 , 0 , 255 );///<  @brief à–¾
-const unsigned int BLACK = GetColor( 0 , 0 , 0 );///<  @brief à–¾
-const unsigned int WHITE = GetColor( 255 , 255 , 255 );///<  @brief à–¾
-const unsigned int GRAY = GetColor( 128 , 128 , 128 );///<  @brief à–¾
-const unsigned int LIGHTBLUE = GetColor( 128 , 128 , 255 );///<  @brief à–¾
-const unsigned int LIGHTGREEN = GetColor( 128 , 255 , 128 );///<  @brief à–¾
-const unsigned int M_PINK = GetColor( 255 , 128 , 128 );///<  @brief à–¾
-const unsigned int YELLOW = GetColor( 255 , 255 , 0);///<  @brief à–¾
+const unsigned int RED = GetColor( 255 , 0 , 0 );///<  @brief ï¿½ï¿½ï¿½ï¿½
+const unsigned int GREEN = GetColor( 0 , 255 , 0 );///<  @brief ï¿½ï¿½ï¿½ï¿½
+const unsigned int BLUE = GetColor( 0 , 0 , 255 );///<  @brief ï¿½ï¿½ï¿½ï¿½
+const unsigned int BLACK = GetColor( 0 , 0 , 0 );///<  @brief ï¿½ï¿½ï¿½ï¿½
+const unsigned int WHITE = GetColor( 255 , 255 , 255 );///<  @brief ï¿½ï¿½ï¿½ï¿½
+const unsigned int GRAY = GetColor( 128 , 128 , 128 );///<  @brief ï¿½ï¿½ï¿½ï¿½
+const unsigned int LIGHTBLUE = GetColor( 128 , 128 , 255 );///<  @brief ï¿½ï¿½ï¿½ï¿½
+const unsigned int LIGHTGREEN = GetColor( 128 , 255 , 128 );///<  @brief ï¿½ï¿½ï¿½ï¿½
+const unsigned int M_PINK = GetColor( 255 , 128 , 128 );///<  @brief ï¿½ï¿½ï¿½ï¿½
+const unsigned int YELLOW = GetColor( 255 , 255 , 0);///<  @brief ï¿½ï¿½ï¿½ï¿½
 
-int RainBow();
+const int SHUIRO = GetColor(221,72,39);
+const int ORANGE= GetColor(230,121,40);
+const int HIIRO= GetColor(199,60,46);
+const int KIMIDORI= GetColor(170,204,59);
+const int NAVY= GetColor(23,37,64);
+const int SCARLET= GetColor(223,84,69);
+const int WAKAKUSA= GetColor(187,211,71);
+const int KONNIRO= GetColor(29,49,86);
+const int KURENAI= GetColor(189,66,90);
+const int ROSE= GetColor(220,67,95);
+const int AOMIDORI= GetColor(0,163,136);
+const int SHIONIRO= GetColor(89,71,140);
+const int CYAN= GetColor(0,163,219);
+const int SKYBLUE= GetColor(142,209,224);
+const int MIIRO= GetColor(5,102,184);
+const int SAKURAIRO= GetColor(252,238,235);
+const int SAKURA= GetColor(255,234,250);
+
+int RainBow(int time=0);
 
 #define RAINBOW RainBow()
 
+#define RAINBOW_RGB (RainBow(),rgb.r*255),rgb.g*255,rgb.b*255
+
+#define RAINBOW_RGB_TIME(time) (RainBow( time ),rgb.r*255),rgb.g*255,rgb.b*255
+
 unsigned int GetColorHSV(int h,int s,int v);
 
-
-
-
+#define HSV_TO_RGB(h,s,v) (GetColorHSV( h , s , v ),rgb.r*255),rgb.g*255rgb.b*255
 
 /**
-*	@brief ƒ_ƒCƒAƒƒO‚ðŠJ‚¢‚ÄAB
-*	ƒ}ƒbƒvƒGƒfƒBƒ^‚È‚Ç‚ðì‚é‚Æ‚«‚É•Ö—˜‚©‚à
-*	@param  filename ŠJ‚«‚½‚¢ƒtƒ@ƒCƒ‹–¼‚ðŠi”[‚µ‚½•¶Žš—ñ
-*	@param filetype Œ»Ý–³Œø
+*	@brief ï¿½_ï¿½Cï¿½Aï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½ÄAï¿½B
+*	ï¿½}ï¿½bï¿½vï¿½Gï¿½fï¿½Bï¿½^ï¿½È‚Ç‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½É•Ö—ï¿½ï¿½ï¿½ï¿½ï¿½
+*	@param  filename ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½iï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+*	@param filetype ï¿½ï¿½ï¿½Ý–ï¿½ï¿½ï¿½
 * @return true
 */
 bool SelectOpenFile(  char* filename ,  char* filetype = "all file(*.*)\0*.*\0\0");
 /**
-*	@brief ƒ_ƒCƒAƒƒO‚ðŠJ‚¢‚ÄAƒtƒ@ƒCƒ‹‚ð•Û‘¶‚·‚éB
-*	ƒ}ƒbƒvƒGƒfƒBƒ^‚È‚Ç‚ðì‚é‚Æ‚«‚É•Ö—˜‚©‚à
-*	@param  filename •Û‘¶‚µ‚½‚¢ƒtƒ@ƒCƒ‹–¼‚ðŠi”[‚µ‚½•¶Žš—ñ
-*	@param filetype Œ»Ý–³Œø
+*	@brief ï¿½_ï¿½Cï¿½Aï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½ÄAï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Û‘ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
+*	ï¿½}ï¿½bï¿½vï¿½Gï¿½fï¿½Bï¿½^ï¿½È‚Ç‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½É•Ö—ï¿½ï¿½ï¿½ï¿½ï¿½
+*	@param  filename ï¿½Û‘ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½iï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+*	@param filetype ï¿½ï¿½ï¿½Ý–ï¿½ï¿½ï¿½
 * @return true
 */
 bool SaveFile( char* filename , char* filetype =  "all file(*.*)\0*.*\0\0");
 /*
-Œ´ˆö•s–¾ƒGƒ‰[‚Ì‚½‚ßƒRƒƒ“ƒgƒAƒEƒg
+ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Ì‚ï¿½ï¿½ßƒRï¿½ï¿½ï¿½ï¿½ï¿½gï¿½Aï¿½Eï¿½g
 void GetHttpFile(std::string &Buf,std::string Http,unsigned long ReadSize = 65536);
 */
 
 
 
 /////FROM NUNULIB
-//Œ»ÝŽžŽæ“¾ŠÖ”///////////////////////////////////////////
+//ï¿½ï¿½ï¿½ÝŽï¿½ï¿½ï¿½ï¿½æ“¾ï¿½Öï¿½///////////////////////////////////////////
 
 /**
-*	@brief à–¾
-* @return –ß‚è’l
+*	@brief ï¿½ï¿½ï¿½ï¿½
+* @return ï¿½ß‚ï¿½ï¿½l
 */
-SYSTEMTIME GetNowSystemTime();  //SYSTEMTIMEŒ^‚Å“ú–{Žž‚ðŽæ“¾
+SYSTEMTIME GetNowSystemTime();  //SYSTEMTIMEï¿½^ï¿½Å“ï¿½ï¿½{ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ“¾
 
 /**
-*	@brief à–¾
-* @return –ß‚è’l
+*	@brief ï¿½ï¿½ï¿½ï¿½
+* @return ï¿½ß‚ï¿½ï¿½l
 */
-std::string GetNowSystemTimeString();  //stringŒ^(00/00/00 00:00:00 000)‚ÅŒ»Ý“ú–{Žž‚ðŽæ“¾
+std::string GetNowSystemTimeString();  //stringï¿½^(00/00/00 00:00:00 000)ï¿½ÅŒï¿½ï¿½Ý“ï¿½ï¿½{ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ“¾
 
 /**
-*	@brief à–¾
-*	@param value ˆø”
-* @return –ß‚è’l
+*	@brief ï¿½ï¿½ï¿½ï¿½
+*	@param value ï¿½ï¿½ï¿½ï¿½
+* @return ï¿½ß‚ï¿½ï¿½l
 */
 inline int DrawCenterString(int cx, int y, const TCHAR *String, unsigned int color, bool centerY=false)
-{ //x‚ð¶‰E‚Ì’†S‚É‚µ‚ÄDrawString‚Å•¶Žš•`‰æi¦y‚Íã‰º’†S‚Å‚Í‚È‚­ã•Ój
+{ //xï¿½ï¿½ï¿½ï¿½ï¿½Eï¿½Ì’ï¿½ï¿½Sï¿½É‚ï¿½ï¿½ï¿½DrawStringï¿½Å•ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½iï¿½ï¿½yï¿½Íã‰ºï¿½ï¿½ï¿½Sï¿½Å‚Í‚È‚ï¿½ï¿½ï¿½ï¿½Ój
     if (centerY){
-        return DxLib::DrawString(cx-GetDrawStringWidth(String, strlen(String))/2, y-GetFontSize()/2, String, color);    //‚ ‚­‚Ü‚Å–ÚˆÀ 
+        return DxLib::DrawString(cx-GetDrawStringWidth(String, strlen(String))/2, y-GetFontSize()/2, String, color);    //ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚Å–Úˆï¿½ 
     }else{
         return DxLib::DrawString(cx-GetDrawStringWidth(String, strlen(String))/2, y, String, color); 
     }
 }
 
 /**
-*	@brief à–¾
-*	@param value ˆø”
-* @return –ß‚è’l
+*	@brief ï¿½ï¿½ï¿½ï¿½
+*	@param value ï¿½ï¿½ï¿½ï¿½
+* @return ï¿½ß‚ï¿½ï¿½l
 */
 int DrawCenterString(int cx, int y, unsigned int color, const TCHAR* format, ...);
 
 /**
-*	@brief à–¾
-*	@param value ˆø”
-* @return –ß‚è’l
+*	@brief ï¿½ï¿½ï¿½ï¿½
+*	@param value ï¿½ï¿½ï¿½ï¿½
+* @return ï¿½ß‚ï¿½ï¿½l
 */
 int DrawCenterString(int cx, int y, unsigned int color, bool centerY, const TCHAR* format, ...);
 
@@ -97,31 +132,31 @@ int DrawCenterString(int cx, int y, unsigned int color, bool centerY, const TCHA
 //////////////////////////////////////
 
 /**
-*	@brief à–¾
-*	@param value ˆø”
+*	@brief ï¿½ï¿½ï¿½ï¿½
+*	@param value ï¿½ï¿½ï¿½ï¿½
 */
 void AddFontFromPath(std::string path);
 
 /**
-*	@brief à–¾
-*	@param value ˆø”
+*	@brief ï¿½ï¿½ï¿½ï¿½
+*	@param value ï¿½ï¿½ï¿½ï¿½
 */
 void SukenExecute(std::string URL);
 
 
 /**
-*	@brief à–¾
-*	@param value ˆø”
-* @return –ß‚è’l
+*	@brief ï¿½ï¿½ï¿½ï¿½
+*	@param value ï¿½ï¿½ï¿½ï¿½
+* @return ï¿½ß‚ï¿½ï¿½l
 */
 unsigned int fanctorial(unsigned int num);			//
 
 /**
-*	@brief à–¾
-*	@param value ˆø”
-* @return –ß‚è’l
+*	@brief ï¿½ï¿½ï¿½ï¿½
+*	@param value ï¿½ï¿½ï¿½ï¿½
+* @return ï¿½ß‚ï¿½ï¿½l
 */
-unsigned int combination(unsigned int n , unsigned int r);					//nCr‚Æ‚©‚â‚é‚ ‚êB‘g‚Ý‡‚í‚¹
+unsigned int combination(unsigned int n , unsigned int r);					//nCrï¿½Æ‚ï¿½ï¿½ï¿½ï¿½é‚ ï¿½ï¿½ï¿½Bï¿½gï¿½Ýï¿½ï¿½í‚¹
 
 
 }
