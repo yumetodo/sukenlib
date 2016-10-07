@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include"../Manager.h"
 #include "DxLib.h"
 #include <string>
@@ -20,16 +20,16 @@ extern megademo::RGB rgb;
 
 namespace suken{
 
-const unsigned int RED = GetColor( 255 , 0 , 0 );///<  @brief ����
-const unsigned int GREEN = GetColor( 0 , 255 , 0 );///<  @brief ����
-const unsigned int BLUE = GetColor( 0 , 0 , 255 );///<  @brief ����
-const unsigned int BLACK = GetColor( 0 , 0 , 0 );///<  @brief ����
-const unsigned int WHITE = GetColor( 255 , 255 , 255 );///<  @brief ����
-const unsigned int GRAY = GetColor( 128 , 128 , 128 );///<  @brief ����
-const unsigned int LIGHTBLUE = GetColor( 128 , 128 , 255 );///<  @brief ����
-const unsigned int LIGHTGREEN = GetColor( 128 , 255 , 128 );///<  @brief ����
-const unsigned int M_PINK = GetColor( 255 , 128 , 128 );///<  @brief ����
-const unsigned int YELLOW = GetColor( 255 , 255 , 0);///<  @brief ����
+const unsigned int RED = GetColor( 255 , 0 , 0 );///<  @brief 説明
+const unsigned int GREEN = GetColor( 0 , 255 , 0 );///<  @brief 説明
+const unsigned int BLUE = GetColor( 0 , 0 , 255 );///<  @brief 説明
+const unsigned int BLACK = GetColor( 0 , 0 , 0 );///<  @brief 説明
+const unsigned int WHITE = GetColor( 255 , 255 , 255 );///<  @brief 説明
+const unsigned int GRAY = GetColor( 128 , 128 , 128 );///<  @brief 説明
+const unsigned int LIGHTBLUE = GetColor( 128 , 128 , 255 );///<  @brief 説明
+const unsigned int LIGHTGREEN = GetColor( 128 , 255 , 128 );///<  @brief 説明
+const unsigned int M_PINK = GetColor( 255 , 128 , 128 );///<  @brief 説明
+const unsigned int YELLOW = GetColor( 255 , 255 , 0);///<  @brief 説明
 
 const int SHUIRO = GetColor(221,72,39);
 const int ORANGE= GetColor(230,121,40);
@@ -62,68 +62,68 @@ unsigned int GetColorHSV(int h,int s,int v);
 #define HSV_TO_RGB(h,s,v) (GetColorHSV( h , s , v ),rgb.r*255),rgb.g*255rgb.b*255
 
 /**
-*	@brief �_�C�A���O���J���āA�B
-*	�}�b�v�G�f�B�^�Ȃǂ������Ƃ��ɕ֗�����
-*	@param  filename �J�������t�@�C�������i�[����������
-*	@param filetype ���ݖ���
+*	@brief ダイアログを開いて、。
+*	マップエディタなどを作るときに便利かも
+*	@param  filename 開きたいファイル名を格納した文字列
+*	@param filetype 現在無効
 * @return true
 */
 bool SelectOpenFile(  char* filename ,  char* filetype = "all file(*.*)\0*.*\0\0");
 /**
-*	@brief �_�C�A���O���J���āA�t�@�C�����ۑ������B
-*	�}�b�v�G�f�B�^�Ȃǂ������Ƃ��ɕ֗�����
-*	@param  filename �ۑ��������t�@�C�������i�[����������
-*	@param filetype ���ݖ���
+*	@brief ダイアログを開いて、ファイルを保存する。
+*	マップエディタなどを作るときに便利かも
+*	@param  filename 保存したいファイル名を格納した文字列
+*	@param filetype 現在無効
 * @return true
 */
 bool SaveFile( char* filename , char* filetype =  "all file(*.*)\0*.*\0\0");
 /*
-�����s���G���[�̂��߃R�����g�A�E�g
+原因不明エラーのためコメントアウト
 void GetHttpFile(std::string &Buf,std::string Http,unsigned long ReadSize = 65536);
 */
 
 
 
 /////FROM NUNULIB
-//���ݎ����擾�֐�///////////////////////////////////////////
+//現在時刻取得関数///////////////////////////////////////////
 
 /**
-*	@brief ����
-* @return �߂��l
+*	@brief 説明
+* @return 戻り値
 */
-SYSTEMTIME GetNowSystemTime();  //SYSTEMTIME�^�œ��{�������擾
+SYSTEMTIME GetNowSystemTime();  //SYSTEMTIME型で日本時刻を取得
 
 /**
-*	@brief ����
-* @return �߂��l
+*	@brief 説明
+* @return 戻り値
 */
-std::string GetNowSystemTimeString();  //string�^(00/00/00 00:00:00 000)�Ō��ݓ��{�������擾
+std::string GetNowSystemTimeString();  //string型(00/00/00 00:00:00 000)で現在日本時刻を取得
 
 /**
-*	@brief ����
-*	@param value ����
-* @return �߂��l
+*	@brief 説明
+*	@param value 引数
+* @return 戻り値
 */
 inline int DrawCenterString(int cx, int y, const TCHAR *String, unsigned int color, bool centerY=false)
-{ //x�����E�̒��S�ɂ���DrawString�ŕ����`���i��y�͏㉺���S�ł͂Ȃ����Ӂj
+{ //xを左右の中心にしてDrawStringで文字描画（※yは上下中心ではなく上辺）
     if (centerY){
-        return DxLib::DrawString(cx-GetDrawStringWidth(String, strlen(String))/2, y-GetFontSize()/2, String, color);    //�����܂Ŗڈ� 
+        return DxLib::DrawString(cx-GetDrawStringWidth(String, strlen(String))/2, y-GetFontSize()/2, String, color);    //あくまで目安 
     }else{
         return DxLib::DrawString(cx-GetDrawStringWidth(String, strlen(String))/2, y, String, color); 
     }
 }
 
 /**
-*	@brief ����
-*	@param value ����
-* @return �߂��l
-*/
+*	@brief 説明
+*	@param value 引数
+* @return 戻り値
+*/	
 int DrawCenterString(int cx, int y, unsigned int color, const TCHAR* format, ...);
 
 /**
-*	@brief ����
-*	@param value ����
-* @return �߂��l
+*	@brief 説明
+*	@param value 引数
+* @return 戻り値
 */
 int DrawCenterString(int cx, int y, unsigned int color, bool centerY, const TCHAR* format, ...);
 
@@ -132,31 +132,31 @@ int DrawCenterString(int cx, int y, unsigned int color, bool centerY, const TCHA
 //////////////////////////////////////
 
 /**
-*	@brief ����
-*	@param value ����
+*	@brief 説明
+*	@param value 引数
 */
 void AddFontFromPath(std::string path);
 
 /**
-*	@brief ����
-*	@param value ����
+*	@brief 説明
+*	@param value 引数
 */
 void SukenExecute(std::string URL);
 
 
 /**
-*	@brief ����
-*	@param value ����
-* @return �߂��l
+*	@brief 説明
+*	@param value 引数
+* @return 戻り値
 */
 unsigned int fanctorial(unsigned int num);			//
 
 /**
-*	@brief ����
-*	@param value ����
-* @return �߂��l
+*	@brief 説明
+*	@param value 引数
+* @return 戻り値
 */
-unsigned int combination(unsigned int n , unsigned int r);					//nCr�Ƃ����邠���B�g�ݍ��킹
+unsigned int combination(unsigned int n , unsigned int r);					//nCrとかやるあれ。組み合わせ
 
 
 }
